@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
@@ -10,24 +10,21 @@
         android:id="@+id/txtId"
         android:textSize="20dp"
         android:text="sample"
-        android:layout_margin="10dp"
-        android:background="#ECE187"/>
+        android:layout_margin="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtName"
         android:textSize="20dp"
         android:text="sample"
-        android:layout_margin="10dp"
-        android:background="#ECE187"/>
+        android:layout_margin="10dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtUname"
         android:textSize="20dp"
         android:text="sample"
-        android:layout_margin="10dp"
-        android:background="#ECE187"/>
+        android:layout_margin="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,6 +32,37 @@
         android:id="@+id/txtemail"
         android:textSize="20dp"
         android:text="sample"
-        android:layout_margin="10dp"
-        android:background="#ECE187"/>
+        android:layout_margin="10dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address:"
+            android:layout_margin="10dp"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Street:"
+            android:textSize="20dp"
+            android:layout_marginLeft="80dp"
+            android:id="@+id/street"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suit:"
+            android:textSize="20dp"
+            android:layout_marginLeft="80dp"
+            android:id="@+id/suit"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City:"
+            android:textSize="20dp"
+            android:layout_marginLeft="80dp"
+            android:id="@+id/city"/>
+    </LinearLayout>
 </LinearLayout>

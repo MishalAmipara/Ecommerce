@@ -23,6 +23,7 @@ public class ViewData_Activity extends AppCompatActivity {
 
     ListView listView;
     ArrayList<DataModel> arrayList=new ArrayList<>();
+    ArrayList<DataModel.Address> addresses = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +32,7 @@ public class ViewData_Activity extends AppCompatActivity {
 
         apiCalling();
         System.out.println("size of data="+arrayList.size());
-        DataAdapter dataAdapter=new DataAdapter(this,arrayList);
-        listView.setAdapter(dataAdapter);
+
 
     }
 
@@ -65,10 +65,18 @@ public class ViewData_Activity extends AppCompatActivity {
 //                                dataModel.setUname(uname);
 //                                dataModel.setEmail(email);
                                 arrayList.add(dataModel);
+                                JSONObject jsonObjAddress = jsonObject.getJSONObject("address");
+                                String street = jsonObjAddress.getString("street");
+                                String suite = jsonObjAddress.getString("suite");
+                                String city = jsonObjAddress.getString("city");
 
-                                Log.d("AAA","Size"+arrayList.size());
+                                DataModel.Address address = new DataModel.Address(street,suite,city);
+                                addresses.add(address);
+                                Log.d("Adress","Address="+jsonObjAddress);
 
                             }
+                            DataAdapter dataAdapter=new DataAdapter(ViewData_Activity.this,arrayList,addresses);
+                            listView.setAdapter(dataAdapter);
                             Log.d("BBB","data="+arrayList);
 
 
